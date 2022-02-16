@@ -7,14 +7,11 @@ public:
         }
         
         int counter = 0;
-        while (counter < k + 1) {
         for (int i = 0; i < arr.size(); i++) {
             if (m[arr[i]] == 1)
                 counter++;
             if (counter == k)
                 return arr[i];
-        }
-            counter = k + 1;
         }
         return "";
     }
