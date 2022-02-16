@@ -1,14 +1,14 @@
 class Solution {
 public:
     int largestUniqueNumber(vector<int>& nums) {
-        unordered_map<int,int> m;
+        vector<int> v(2000);
         sort(nums.begin(), nums.end());
         
         for (auto x : nums) {
-            m[x]++;
+            v[x]++;
         }
         for (int i = nums.size() - 1; i >= 0; i--) {
-            if (m[nums[i]] == 1) {
+            if (v[nums[i]] == 1) {
                 return nums[i];
                 break;
             }
