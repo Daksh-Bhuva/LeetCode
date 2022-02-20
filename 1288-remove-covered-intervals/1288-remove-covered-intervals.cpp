@@ -2,7 +2,6 @@ class Solution {
 public:
     int removeCoveredIntervals(vector<vector<int>>& intervals) {
         int ans = intervals.size();
-        vector<bool> done(intervals.size());
         for (int i = 0; i < intervals.size(); i++) {
             for (int j = 0; j < intervals.size(); j++) {
                 if(i == j)
