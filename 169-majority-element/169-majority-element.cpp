@@ -1,19 +1,13 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        unordered_map<int,int> m;
-        int maxi = -1;
-        
-        for (auto x : nums) {
-            m[x]++;
+        int count = 0;
+        int number = NULL;
+        for (int i = 0; i < nums.size(); i++) {
+            if (count == 0)
+                number = nums[i];
+            count += (nums[i] == number) ? 1 : -1;
         }
-        for (auto x : m) {
-            maxi = max(maxi, x.second);
-        }
-        for (auto x : m) {
-            if (x.second == maxi)
-                return x.first;
-        }
-        return 0;
+        return number;
     }
 };
