@@ -5,7 +5,7 @@ public:
         for(auto x : s) {
             count[x - 'a']++;
         }
-        sort(count.begin(),count.end());
+        // sort(count.begin(),count.end());
         set<int> st;
         int moves = 0;
         for(auto x : count) {
